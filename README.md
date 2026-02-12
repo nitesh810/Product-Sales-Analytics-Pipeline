@@ -27,13 +27,11 @@ sales-analytics-project/
 │   ├── 02_silver_layer.py          # Data cleaning & transformation
 │   ├── 03_gold_layer.py            # Business metrics & aggregations
 │   └── run_pipeline.py             # Master pipeline executor
-├── output/
-│   ├── bronze/                     # Raw ingested data
-│   ├── silver/                     # Cleaned data
-│   └── gold/                       # Analytical datasets
-├── config/
-└── docs/
-    └── README.md
+├── docs/
+|    ├── ARCHITECTURE.md
+|    └── SETUP_GUIDE.md
+├── requirements.txt
+└── README.md
 ```
 
 ## Pipeline Layers
@@ -101,13 +99,14 @@ Records after removing duplicates: 30
 Records after removing null customer_id: 29
 
 **Starting Gold Layer Processing**
+```
 Monthly Sales Summary:
 +----+-----+------------+-------------+---------------+
 |year|month|total_orders|total_revenue|avg_order_value|
 +----+-----+------------+-------------+---------------+
 |2024|    1|           5|       106000|        21200.0|
 |2024|    2|           4|        83000|        20750.0|
-...
+
 ```
 
 ### Generated Files:
