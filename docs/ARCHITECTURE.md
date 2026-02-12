@@ -125,7 +125,7 @@ Processing:      Batch ETL
 
 
 ## PIPELINE EXECUTION
-
+```
 Manual Execution:
 $ cd scripts/
 $ python3 01_bronze_layer.py    # Ingest raw data
@@ -135,3 +135,4 @@ $ python3 03_gold_layer.py      # Generate analytics
 Automated Execution:
 $ cd scripts/
 $ python3 run_pipeline.py       # Run all layers
+```
