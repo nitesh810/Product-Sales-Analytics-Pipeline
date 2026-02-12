@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Spark
+metastore_db/
+derby.log
+spark-warehouse/
+
+# Output files
+output/bronze/*
+output/silver/*
+output/gold/*
+
+# Keep folder structure
+!output/bronze/.gitkeep
+!output/silver/.gitkeep
+!output/gold/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
