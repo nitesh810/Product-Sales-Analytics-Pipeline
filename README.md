@@ -11,7 +11,7 @@ Process raw sales transaction data to generate actionable business insights incl
 - Customer purchase behavior
 
 ## Tech Stack
-- **Language**: Python 3.x
+- **Language**: Python
 - **Framework**: PySpark
 - **Architecture**: Medallion (Bronze-Silver-Gold)
 - **Data Format**: CSV (input), Parquet (processing)
@@ -38,20 +38,20 @@ sales-analytics-project/
 
 ## Pipeline Layers
 
-### 🥉 Bronze Layer (Data Ingestion)
+### Bronze Layer (Data Ingestion)
 - Reads raw CSV sales data
 - Adds ingestion timestamp
 - Saves as Parquet format
 - **No transformations** - preserves raw data
 
-### 🥈 Silver Layer (Data Cleaning)
+### Silver Layer (Data Cleaning)
 - Removes duplicate records
 - Handles missing values (filters null customer_id)
 - Standardizes text columns (uppercase, trim)
 - Converts date formats
 - Calculates total_amount (quantity × price)
 
-### 🥇 Gold Layer (Business Analytics)
+### Gold Layer (Business Analytics)
 Generates 4 key analytical datasets:
 1. **Monthly Sales Summary** - Revenue trends by month
 2. **Top 5 Products** - Best performing products by revenue
@@ -60,21 +60,11 @@ Generates 4 key analytical datasets:
 
 ## Setup Instructions
 
-### Prerequisites
-- Python 3.8+
-- PySpark 3.x
-- Java 8 or 11 (required for Spark)
-
 ### Installation
 
-1. **Install PySpark**
+**Install PySpark**
 ```bash
 pip install pyspark
-```
-
-2. **Verify Installation**
-```bash
-python3 -c "import pyspark; print(pyspark.__version__)"
 ```
 
 ## How to Run
@@ -99,26 +89,18 @@ python3 02_silver_layer.py
 python3 03_gold_layer.py
 ```
 
-## Expected Output
+## Expected Output Example:
 
-### Console Output Example:
-```
-==================================================
-Starting Bronze Layer Processing
-==================================================
+**Starting Bronze Layer Processing**
 Reading raw data from: ../data/raw/sales_data.csv
 Total Records in Bronze Layer: 30
 
-==================================================
-Starting Silver Layer Processing
-==================================================
+**Starting Silver Layer Processing**
 Records before cleaning: 30
 Records after removing duplicates: 30
 Records after removing null customer_id: 29
 
-==================================================
-Starting Gold Layer Processing
-==================================================
+**Starting Gold Layer Processing**
 Monthly Sales Summary:
 +----+-----+------------+-------------+---------------+
 |year|month|total_orders|total_revenue|avg_order_value|
@@ -137,11 +119,11 @@ Monthly Sales Summary:
 - `output/gold/top_customers/` - Top customers report
 
 ## Data Quality Checks Implemented
-✅ Duplicate removal based on order_id  
-✅ Null value handling for customer_id  
-✅ Data type standardization  
-✅ Date format validation  
-✅ Calculated field validation  
+- Duplicate removal based on order_id  
+- Null value handling for customer_id  
+- Data type standardization  
+- Date format validation  
+- Calculated field validation  
 
 ## Key Metrics Tracked
 - **Total Revenue**: Sum of all sales
@@ -166,19 +148,3 @@ order_date: date
 region: string
 total_amount: double (Silver+)
 ```
-
-## Future Enhancements
-- Add data validation rules
-- Implement incremental loading
-- Add data quality metrics dashboard
-- Schedule with Airflow/cron
-- Add unit tests
-- Implement logging framework
-
-## Author
-Your Name  
-Data Engineer  
-Contact: your.email@example.com
-
-## License
-This project is for educational and portfolio purposes.
