@@ -145,5 +145,5 @@ quantity: integer
 price: integer
 order_date: date
 region: string
-total_amount: double (Silver+)
+total_amount: double
 ```
