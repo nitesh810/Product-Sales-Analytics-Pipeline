@@ -102,7 +102,7 @@ INPUT DATA
     • Reports
     • Analytics
     • Decision Making
-
+```
 
 ## TECHNOLOGY STACK
 
