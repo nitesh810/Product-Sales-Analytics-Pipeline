@@ -59,7 +59,7 @@ python3 03_gold_layer.py
 ### Check Output Files Created:
 ```bash
 # From project root
-ls -la output/bronze/
-ls -la output/silver/
-ls -la output/gold/
+output/bronze/
+output/silver/
+output/gold/
 ```
